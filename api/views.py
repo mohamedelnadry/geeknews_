@@ -24,12 +24,22 @@ class SearchAPIView(generics.ListCreateAPIView):
 # http://127.0.0.1:8000/api/?contenttype=Chapter%20ConferencePaper&search=python&publicationdate=2021-01-1
 
 
-class details(generics.ListCreateAPIView):
-    serializer_class = SerialiserData
+# class details(generics.ListCreateAPIView):
+#     serializer_class = SerialiserData
 
-    def get_queryset(self):
-        queryset = Articles.objects.filter(pk=self.kwargs['post_id'])
-        return queryset
+#     def get_queryset(self):
+#         queryset = Articles.objects.filter(pk=self.kwargs['post_id'])
+#         return queryset
+
+class details(APIView):
+    # serializer_class = SerialiserData
+
+    def get(self, request, *args, **kwargs):
+        id = kwargs.get('post_id')
+        queryset = Articles.objects.get(pk=id)
+        serializer = SerialiserData(queryset)
+        return Response(serializer.data)
+        # return Response(queryset)
 
 
 class AuthorDetails(generics.ListCreateAPIView):

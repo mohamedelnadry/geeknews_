@@ -1,0 +1,6 @@
+push local database:PGUSER=postgres PGPASSWORD=1 heroku pg:push postgres://localhost/geeksnews  d5o9g627e1283c
+
+PGUSER=postgres PGPASSWORD=1 heroku pg:push postgres://localhost/geeksnews  d5o9g627e1283c
+
+
+PGUSER=cgbkjzupytpodw PGPASSWORD=aa8b4676cfa42b9337f61d96f7a9d4d427a279a03ceeb9d6d511a89d72e2755e pg_restore -h 'ec2-54-155-226-153.eu-west-1.compute.amazonaws.com' -d dbta302is6sdio < test.sql
