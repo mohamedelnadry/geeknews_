@@ -29,10 +29,11 @@ class RegisterSerializer(serializers.ModelSerializer):
     password = serializers.CharField(write_only=True, required=True, validators=[validate_password])
     password2 = serializers.CharField(write_only=True, required=True)
     # avatar = serializers.ImageField(source=profile.avatar)
+    user_category = serializers.ListField(source="profile.user_Category")
 
     class Meta:
         model = User
-        fields = ('username', 'password', 'password2', 'email', 'first_name', 'last_name')
+        fields = ('username', 'password', 'password2', 'email', 'first_name', 'last_name','user_category')
         extra_kwargs = {
             'first_name': {'required': True},
             'last_name': {'required': True}

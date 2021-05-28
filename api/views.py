@@ -28,8 +28,9 @@ class SearchAPIView(generics.ListCreateAPIView):
 #     serializer_class = SerialiserData
 
 #     def get_queryset(self):
-#         queryset = Articles.objects.filter(pk=self.kwargs['post_id'])
+#         queryset = Articles.objects.get(pk=self.kwargs['post_id'])
 #         return queryset
+# from rest_framework import status
 
 class details(APIView):
     # serializer_class = SerialiserData
@@ -40,6 +41,7 @@ class details(APIView):
         serializer = SerialiserData(queryset)
         return Response(serializer.data)
         # return Response(queryset)
+
 
 
 class AuthorDetails(generics.ListCreateAPIView):
