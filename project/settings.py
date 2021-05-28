@@ -166,28 +166,3 @@ REST_FRAMEWORK = {
 }
 
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
-
-# CELERY STUFF
-BROKER_URL = 'redis://localhost:6379'
-# CELERY_RESULT_BACKEND = 'redis://localhost:6379'
-# CELERY_ACCEPT_CONTENT = ['application/json']
-# CELERY_TASK_SERIALIZER = 'json'
-# CELERY_RESULT_SERIALIZER = 'json'
-# CELERY_TIMEZONE = 'Africa/Nairobi'
-
-from celery.schedules import crontab
-
-# CELERY_BEAT_SCHEDULE = {
-#     "scheduled_task": {
-#         "task": "scraper.tasks.get_data",
-#         'schedule': 30.0,
-#         # "schedule": crontab(minute=0, hour=0),
-#     }
-# }
-# CELERY_BEAT_SCHEDULE = {
-#     "scheduled_task": {
-#         "task": "scraper.tasks.get_data",
-#         'schedule': 30.0,
-#         # 'args': (),
-#     },
-# }
